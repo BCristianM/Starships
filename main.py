@@ -28,7 +28,7 @@ def change_names():
                 pilot_info = requests.get(stuff["pilots"][index]).json()  # Goes into the URL itself and gets the info from
                 pilot_id = db.characters.find_one({"name": pilot_info["name"]}, {"_id": 1})
                 stuff["pilots"][index] = pilot_id["_id"]
-    return list_of_ships
+    return list_of_ships  # This function returns the amended list of ships
 
 
 create_list()
